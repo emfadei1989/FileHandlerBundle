@@ -1,5 +1,5 @@
 parameters:
-    validateParams:
+    fileHandler_validateParams:
         maxSize: 1000
         mime-type: text/html,text/plain
 
@@ -24,7 +24,7 @@ services:
        autowire: true
        public: true
        arguments:
-           $validateParams: '%validateParams%'
+           $validateParams: '%fileHandler_validateParams%'
 
     EFA\FileHandlerBundle\FileRepository\LocalRepository:
         arguments:
