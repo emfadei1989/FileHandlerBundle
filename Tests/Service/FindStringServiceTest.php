@@ -1,6 +1,6 @@
 <?php
 
-namespace EFA\FileHandlerBundle\Test\Service;
+namespace EFA\FileHandlerBundle\Tests\Service;
 
 use PHPUnit\Framework\TestCase;
 use EFA\FileHandlerBundle\Service\FindStringService;

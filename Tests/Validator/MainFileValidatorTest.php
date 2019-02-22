@@ -1,6 +1,6 @@
 <?php
 
-namespace EFA\Tests\Validator;
+namespace EFA\FileHandlerBundle\Tests\Validator;
 
 use EFA\FileHandlerBundle\DTO\FileDTO;
 use PHPUnit\Framework\TestCase;
