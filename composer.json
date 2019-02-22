@@ -1,5 +1,6 @@
 {
     "name": "efa/FileHandlerBundle",
+    "description": "bundle for test",
     "type": "library",
     "authors": [
         {
@@ -7,6 +8,8 @@
             "email": "emfadei1989@yandex.ru"
         }
     ],
+    "license": "MIT",
+    "minimum-stability": "dev",
     "autoload": {
         "psr-4": { "EFA\\FileHandlerBundle\\": "src/" }
     },
