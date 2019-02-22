@@ -1,0 +1,25 @@
+{
+    "name": "efa/FileHandlerBundle",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Fadey Emelyanov",
+            "email": "emfadei@mail.ru"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "EFA\\FileHandlerBundle\\": ""
+        }
+    },
+
+    "require": {
+        "symfony/framework-bundle": "~4.0",
+		"symfony/console": "~4.0",
+		"symfony/yaml": "~4.0",
+		"mikey179/vfsStream": "^2.0@dev",
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.7"
+    }
+}

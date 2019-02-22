@@ -1,0 +1,35 @@
+parameters:
+    validateParams:
+        maxSize: 1000
+        mime-type: text/html,text/plain
+
+
+services:
+    EFA\FileHandlerBundle\Controller\FileController:
+        autowire: true
+        public: true
+        arguments:
+            $fileRepository: '@EFA\FileHandlerBundle\FileRepository\LocalRepository'
+            $validator: '@EFA\FileHandlerBundle\Validator\MainFileValidator'
+            $fileService: '@EFA\FileHandlerBundle\Service\FileService'
+
+    EFA\FileHandlerBundle\Service\FileService:
+        autowire: true
+        public: true
+        arguments:
+            $rootPath: '%kernel.project_dir%'
+            $findStringService: '@EFA\FileHandlerBundle\Service\FindStringService'
+
+    EFA\FileHandlerBundle\Validator\MainFileValidator:
+       autowire: true
+       public: true
+       arguments:
+           $validateParams: '%validateParams%'
+
+    EFA\FileHandlerBundle\FileRepository\LocalRepository:
+        arguments:
+            $rootPath: '%kernel.project_dir%'
+
+    EFA\FileHandlerBundle\Service\FindStringService:
+        autowire: true
+        public: true
