@@ -5,7 +5,7 @@
     composer require efa/FileHandlerBundle
 
 
-###Добавляем бандл в config/bundles.php
+### Добавляем бандл в config/bundles.php
 
     EFA\FileHandlerBundle\FileHandlerBundle::class => ['all' => true]
 
@@ -15,7 +15,7 @@
         type: annotation
         resource: '@FileHandlerBundle/Controller/FileController.php'
     
-###Кастомизация параметров
+### Кастомизация параметров
 Добавляем в папку config/packages файл fileHandler.yaml
 
 
