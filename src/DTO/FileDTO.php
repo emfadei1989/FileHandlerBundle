@@ -19,12 +19,6 @@ class FileDTO
      */
     protected $mimeType;
 
-    public function __construct(array $fileInfo)
-    {
-        $this->setPath($fileInfo['path'] ?? null);
-        $this->setSize($fileInfo['size'] ?? null);
-        $this->setMimeType($fileInfo['mimeType'] ?? null);
-    }
 
     /**
      * @return string || null

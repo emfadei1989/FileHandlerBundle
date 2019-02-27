@@ -2,6 +2,7 @@
 
 namespace EFA\FileHandlerBundle\Controller;
 
+use EFA\FileHandlerBundle\Service\ConnectionType\ConnectionFactory;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -22,17 +23,17 @@ class FileController extends Controller
      * @var IMainFileValidator
      */
     private $validator;
-
     /**
-     * @var IFileRepository
+     * @var ConnectionFactory
      */
-    private $fileRepository;
+    private $connectionFactory;
 
-    public function __construct(IFileService $fileService, IMainFileValidator $validator, IFileRepository $fileRepository)
+
+    public function __construct(IFileService $fileService, IMainFileValidator $validator, ConnectionFactory $connectionFactory )
     {
         $this->fileService = $fileService;
         $this->validator = $validator;
-        $this->fileRepository = $fileRepository;
+        $this->connectionFactory = $connectionFactory;
     }
 
     /**
@@ -55,7 +56,7 @@ class FileController extends Controller
         if (!$findString) {
             throw new \Exception("Parameter 'find_string' not set");
         }
-        $FileDTO = new FileDTO($this->fileService->getFileInfo($filePath));
+        $FileDTO = $this->connectionFactory->getConnectionType($filePath)->getFileInfo($filePath);
 
         $this->validator->validate($FileDTO);
 

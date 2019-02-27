@@ -26,7 +26,7 @@ services:
        arguments:
            $validateParams: '%fileHandler_validateParams%'
 
-    EFA\FileHandlerBundle\FileRepository\LocalRepository:
+    EFA\FileHandlerBundle\Service\ConnectionType\ConnectionFactory:
         arguments:
             $rootPath: '%kernel.project_dir%'
 
